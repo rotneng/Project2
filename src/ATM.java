@@ -49,4 +49,45 @@ public class ATM {
         frame.pack();
         frame.setVisible(true);
     }
+       private void login() {
+        int pinInput = Integer.parseInt(pinField.getText());
+
+        if (pinInput == PIN) {
+            showMenu();
+        } else {
+            messageLabel.setText("Invalid PIN. Please try again.");
+        }
+    }
+
+    private void showMenu() {
+        frame.getContentPane().removeAll();
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(5, 1));
+
+        JLabel titleLabel = new JLabel("ATM Menu:");
+        panel.add(titleLabel);
+
+        JButton balanceButton = new JButton("Check Balance");
+        balanceButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showBalance();
+            }
+        });
+        panel.add(balanceButton);
+
+        JButton withdrawButton = new JButton("Withdraw");
+        withdrawButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showWithdrawal();
+            }
+        });
+        panel.add(withdrawButton);
+
+        JButton depositButton = new JButton("Deposit");
+        depositButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showDeposit();
+            }
+        });
     
