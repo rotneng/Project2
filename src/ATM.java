@@ -58,7 +58,6 @@ public class ATM {
             messageLabel.setText("Invalid PIN. Please try again.");
         }
     }
-
     private void showMenu() {
         frame.getContentPane().removeAll();
 
