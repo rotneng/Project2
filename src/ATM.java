@@ -76,6 +76,7 @@ public class ATM {
                 showBalance();
             }
         });
+        
         panel.add(balanceButton);
 
         JButton withdrawButton = new JButton("Withdraw");
