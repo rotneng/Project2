@@ -146,6 +146,3 @@ public class ATM {
             messageLabel.setText("Withdrawal successful. Current balance: $" + balance);
         }
     }
-    
-        
-        
