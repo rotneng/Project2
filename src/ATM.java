@@ -91,6 +91,62 @@ public class ATM {
                 showDeposit();
             }
         });
+         panel.add(depositButton);
+
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                exit();
+            }
+        });
+        panel.add(exitButton);
+
+        frame.getContentPane().add(panel);
+        frame.pack();
+        frame.revalidate();
+    }
+
+    private void showBalance() {
+        messageLabel.setText("Your current balance is: $" + balance);
+    }
+
+    private void showWithdrawal() {
+        frame.getContentPane().removeAll();
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 1));
+
+        JLabel titleLabel = new JLabel("Withdraw");
+        panel.add(titleLabel);
+
+        JLabel amountLabel = new JLabel("Enter the amount to withdraw:");
+        panel.add(amountLabel);
+
+        JTextField amountField = new JTextField();
+        panel.add(amountField);
+
+        JButton withdrawButton = new JButton("Withdraw");
+        withdrawButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double withdrawAmount = Double.parseDouble(amountField.getText());
+                withdraw(withdrawAmount);
+            }
+        });
+        panel.add(withdrawButton);
+
+        frame.getContentPane().add(panel);
+        frame.pack();
+        frame.revalidate();
+    }
+
+    private void withdraw(double amount) {
+        if (amount > balance) {
+            messageLabel.setText("Insufficient funds. Withdrawal canceled.");
+        } else {
+            balance -= amount;
+            messageLabel.setText("Withdrawal successful. Current balance: $" + balance);
+        }
+    }
     
         
         
