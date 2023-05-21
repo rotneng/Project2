@@ -138,7 +138,6 @@ public class ATM {
         frame.pack();
         frame.revalidate();
     }
-
     private void withdraw(double amount) {
         if (amount > balance) {
             messageLabel.setText("Insufficient funds. Withdrawal canceled.");
