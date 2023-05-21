@@ -18,4 +18,35 @@ public class ATM {
             }
         });
     }
+      public void createAndShowGUI() {
+        frame = new JFrame("ATM");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 1));
+
+        JLabel titleLabel = new JLabel("Welcome to the ATM!");
+        panel.add(titleLabel);
+
+        JLabel pinLabel = new JLabel("Enter your PIN:");
+        panel.add(pinLabel);
+
+        pinField = new JTextField();
+        panel.add(pinField);
+
+        JButton loginButton = new JButton("Login");
+        loginButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                login();
+            }
+        });
+        panel.add(loginButton);
+
+        messageLabel = new JLabel();
+        panel.add(messageLabel);
+
+        frame.getContentPane().add(panel);
+        frame.pack();
+        frame.setVisible(true);
+    }
     
