@@ -40,6 +40,7 @@ public class ATM {
                 login();
             }
         });
+          
         panel.add(loginButton);
 
         messageLabel = new JLabel();
