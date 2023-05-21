@@ -18,7 +18,6 @@ public class ATM {
             }
         });
     }
-    
       public void createAndShowGUI() {
         frame = new JFrame("ATM");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,8 +39,7 @@ public class ATM {
             public void actionPerformed(ActionEvent e) {
                 login();
             }
-        });
-          
+        });        
         panel.add(loginButton);
 
         messageLabel = new JLabel();
