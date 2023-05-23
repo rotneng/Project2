@@ -146,3 +146,42 @@ public class ATM {
             messageLabel.setText("Withdrawal successful. Current balance: $" + balance);
         }
     }
+private void showDeposit() {
+        frame.getContentPane().removeAll();
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 1));
+
+        JLabel titleLabel = new JLabel("Deposit");
+        panel.add(titleLabel);
+
+        JLabel amountLabel = new JLabel("Enter the amount to deposit:");
+        panel.add(amountLabel);
+
+        JTextField amountField = new JTextField();
+        panel.add(amountField);
+
+        JButton depositButton = new JButton("Deposit");
+        depositButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double depositAmount = Double.parseDouble(amountField.getText());
+                deposit(depositAmount);
+            }
+        });
+        panel.add(depositButton);
+
+        frame.getContentPane().add(panel);
+        frame.pack();
+        frame.revalidate();
+    }
+
+    private void deposit(double amount) {
+        balance += amount;
+        messageLabel.setText("Deposit successful. Current balance: $" + balance);
+    }
+
+    private void exit() {
+        JOptionPane.showMessageDialog(frame, "Thank you for using the ATM. Goodbye!");
+        System.exit(0);
+    }
+}
