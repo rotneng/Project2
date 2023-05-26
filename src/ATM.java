@@ -109,7 +109,6 @@ public class ATM {
     private void showBalance() {
         messageLabel.setText("Your current balance is: $" + balance);
     }
-
     private void showWithdrawal() {
         frame.getContentPane().removeAll();
 
